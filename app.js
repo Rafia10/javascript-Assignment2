@@ -149,14 +149,22 @@
 //    prompt the user to enter a valid password. For character codes 
 // of a-z, A-Z & 0-9, refer to ASCII table at the end of this document. 
 
-// var pass=prompt("Enter Password");
-// if(pass=="a-z" || pass=="A-Z" || pass==6 && pass==0-9)
-// {
-//   alert("Password is valid");
+// function CheckPassword() 
+// { 
+// var format=  /^(?=.*[0-9])[a-zA-Z0-9]{6}$/;
+// var pass=prompt("Enter password");
+// if(pass.match(format)) 
+// { 
+// alert('Correct, try another...')
+// return true;
 // }
-// else{
-//   alert("Invalid Password")
+// else
+// { 
+// alert('Wrong...!')
+// return false;
 // }
+// } 
+// alert(CheckPassword())
 
 //16. Write a program to convert the following string to an array using string split method. 
 //var university = “University of Karachi”; Display the elements of array in your browser. 
@@ -500,19 +508,22 @@
 // function hypotenuse(){
 //  var per=+prompt("Enter perpendicular");
 //  var base=+prompt("Enter base ");
-//   var hypo= Math.hypot(per,base)
-//   return hypo
-//   function calsq(){
-//     return hypo*hypo
+//   var b=Math.pow(base,2);
+//   var p=Math.pow(per,2)
+//   var hypo=b+p
+
+//     return hypo;
+// }
+
+//   function calsq(hypo){
+//     return Math.sqrt(hypo);
 
 //   }
-//   //  function square(per,base){
-//   //    return
-//   //   var sq=Math.sqrt(square(per)+square(base));
-//   //   return sq
-//   //  }
-// }
-// alert(hypotenuse()+"\n"+calsq());
+
+
+
+//   console.log(hypotenuse()+"\n");
+// console.log(calsq(hypo))
 
 //9. Write a function that calculates the area of a rectangle.    
 //   A = width * height     Pass width and height in following manner: 
@@ -535,10 +546,18 @@
 //10. Write a JavaScript function that checks whether a passed string is palindrome or not?  
 //  A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam. 
 
-// function palindrome(){
-//   var str="Madam";
-
-// }
+// function palindrome(str) {
+//     var regex = /[\W_]/g;
+//     var string = str.toLowerCase().replace(regex , '');
+//     var reverseStr = string.split('').reverse().join(''); 
+//     if(reverseStr === string){
+//         return true;
+//     }
+//     else{
+//         return false
+//     }
+//   }
+//   alert(palindrome("racecar")+" "+" given word is a palindrome word")
 
 //11. Write a JavaScript function that accepts a string as a parameter and 
 //converts the first letter of each word of the string in upper case.  EXAMPLE STRING :
@@ -558,11 +577,61 @@
 //find the longest word within the string.  EXAMPLE STRING : 'Web Development Tutorial'  
 //EXPECTED OUTPUT : 'Development'
 
-// function str(string){
-//   return 
+// function find_longest_word(string)
+// {
+//   var array1 = string.match(/\w[a-z]{0,}/gi);
+//   var result = array1[0];
+
+//   for(var i = 1 ; i < array1.length ; i++)
+//   {
+//     if(result.length < array1[i].length)
+//     {
+//     result = array1[i];
+//     } 
+//   }
+//   return result;
 // }
+// console.log(find_longest_word("Web Development Tutorial"));
+
+//  function str(string){
+//   var mess="Web Development Tutorial"
+//   var get=mess.slice(3,15)
+//   return get
+// }
+// console.log(str("Web Development Tutorial"));
 
 //13. Write a JavaScript function that accepts two arguments, a string and a 
 //letter and the function will count the number of 
 //occurrences of the specified letter within the string.  Sample arguments : 'JSResourceS.com', 'o'  
- 
+
+// function char_count(string, letter) 
+// {
+//  var letter_Count = 0;
+//  for (var index = 0; index < string.length; index++) 
+//  {
+//     if (string.charAt(index) == letter) 
+//       {
+//       letter_Count += 1;
+//       }
+//   }
+//   return letter_Count;
+// }
+
+// console.log(char_count('JSResourceS.com', 'o')+" "+"Character occurs 2 times");
+
+//14. The Geometrizer 
+
+// function calcCircum(radius){
+//     const pi=3.142;
+//     var circumference=2*pi*radius
+//     return circumference
+
+// }
+// console.log("The value of circumference of the circle is:"+" "+calcCircum(5)+"\n");
+// function calcArea(radius){
+//     const pi=3.142;
+//     var area=pi*radius*radius;
+//     return area
+// }
+// console.log("The value of area of the circle is:"+" "+calcArea(5));
+
